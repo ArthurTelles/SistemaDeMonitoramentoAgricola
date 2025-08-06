@@ -127,6 +127,7 @@ void loop()
     ThingSpeak.writeField(CHANNEL_ID, 1, UmidadePercentualTruncada, CHANNEL_API_KEY);
 
     digitalWrite(leitor, LOW); // desativa o sensor após a leitura
+    .shutdown(nv->wss);        // modo de economia de energia (Forced Modem Sleep) para acelerar a transição ao Deep Sleep
 
     Serial.println(F("Dormindo por dez minutos a partir de agora..."));
     printMillis(); // mostra a diferença de tempo antes de entrar em modo de sono
